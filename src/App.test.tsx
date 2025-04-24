@@ -1,14 +1,13 @@
-import { render } from '@testing-library/react'
-import App from './App'
+import { render } from "@testing-library/react";
+import App from "./App";
+import { WidgetList } from "./features/widget/WidgetList/WidgetList";
 
-import WidgetList from './components/WidgetList'
+jest.mock("./components/WidgetList");
 
-jest.mock('./components/WidgetList')
+describe("App", () => {
+  it("renders WidgetList", () => {
+    render(<App />);
 
-describe('App', () => {
-  it('renders WidgetList', () => {
-    render(<App />)
-
-    expect(WidgetList).toHaveBeenCalled()
-  })
-})
+    expect(WidgetList).toHaveBeenCalled();
+  });
+});
